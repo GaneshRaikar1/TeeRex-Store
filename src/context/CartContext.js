@@ -39,10 +39,7 @@ export const CartProvider = ({ children }) => {
   const dec = (id) => { 
     const decItem=cart.find(item=>item.id===id)
     if(decItem.currentQuantity===1){return remove(id)}  
-    setCart([...cart].map(item=>
-      item.id===id? {...item,currentQuantity:item.currentQuantity-1} : item
-    ))
-  }
+    setCart([...cart].map(item=> item.id===id? {...item,currentQuantity:item.currentQuantity-1} : item )) }
   
   const inc = (id) => { 
     const incItem=cart.find(item=>item.id===id)
